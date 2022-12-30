@@ -1,7 +1,13 @@
+import os
+
 from flask import Flask,request,jsonify
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 import numpy as np
+key = os.environ["COG_SERVICE_KEY"]
+region = os.environ["COG_SERVICE_REGION"]
+endpoint = os.environ["ENDPOINT"]
+COG_endpoint = os.environ["COG_SERVICE_ENDPOINT"]
 model = pickle.load(open('model.pkl','rb'))
 # form ke through jabb bhi koi data aata hai aapko usko request ke through handle krna hota hai
 
